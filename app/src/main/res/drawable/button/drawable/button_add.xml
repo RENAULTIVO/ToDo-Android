@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple android:color="@color/colorAccent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:targetApi="lollipop">
+    <item>
+        <shape>
+            <solid android:color="@color/colorPrimary" />
+            <corners android:radius="100dp" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/ic_add" />
+</ripple>
