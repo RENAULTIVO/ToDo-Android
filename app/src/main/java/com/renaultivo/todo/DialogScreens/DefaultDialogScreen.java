@@ -20,6 +20,7 @@ import com.renaultivo.todo.BuildConfig;
 public class DefaultDialogScreen extends Dialog {
 
     RelativeLayout masterContainer;
+    boolean closed = false;
 
     @RequiresApi(api = Build.VERSION_CODES.R)
     public DefaultDialogScreen(@NonNull Context context) {
@@ -84,6 +85,7 @@ public class DefaultDialogScreen extends Dialog {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
+                closed = true;
                 cancel();
             }
         }, 190);
@@ -93,6 +95,17 @@ public class DefaultDialogScreen extends Dialog {
     @Override
     public void onBackPressed() {
         close();
+    }
+
+    @Override
+    public void cancel() {
+
+        if (!closed) {
+            close();
+        } else {
+            super.cancel();
+        }
+
     }
 
 }

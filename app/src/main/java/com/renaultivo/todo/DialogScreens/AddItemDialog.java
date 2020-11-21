@@ -2,6 +2,8 @@ package com.renaultivo.todo.DialogScreens;
 
 import android.content.Context;
 import android.os.Build;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -15,6 +17,15 @@ public class AddItemDialog extends DefaultDialogScreen {
         super(context);
         setContentView(R.layout.add_item_dialog);
         masterContainer = findViewById(R.id.masterContainer);
+
+        Button closeButton = findViewById(R.id.closeButton);
+
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                close();
+            }
+        });
 
         create();
         show();
